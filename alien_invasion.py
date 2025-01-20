@@ -9,12 +9,18 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((1200,800))
         pygame.display.set_caption('Alien Invasion')
 
+        # 设置背景色
+        self.bg_color = (230, 230, 230)
+
     def run_game(self):
         while True:
             # 倾听键盘和鼠标事件
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+
+            # 每次循环时都重新绘屏幕
+            self.screen.fill(self.bg_color)
 
             # 让最近绘制的屏幕可见
             pygame.display.flip()
